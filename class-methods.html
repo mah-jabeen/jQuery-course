@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(179, 212, 252);
+            margin-top: 20px;
+        }
+        .first{
+            background-color: red;
+        }
+        .second{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="id">
+        <h1>class methods</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quisquam a qui impedit eveniet aspernatur esse voluptas ipsa excepturi et.
+        </p>
+    </div>
+    <button id="add">add class</button>
+    <button id="remove">Remove class</button>
+    <button id="toggle">Toggle class</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#add").click(function(){
+                $("#id").addClass("first");
+            });
+            $("#remove").click(function(){
+                $("#id").removeClass("first");
+            });
+            $("#toggle").click(function(){
+                $("#id").toggleClass("second");
+            });
+        });
+    </script>
+</body>
+</html>
