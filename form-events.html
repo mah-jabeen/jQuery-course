@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="box1">
+    <h2>Form events </h2>
+    <form id="sform" action="">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="firstname"><br><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="lastname"><br><br>
+  
+    <label for="cars">Choose a car:</label>
+    <select id="cars" name="cars">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option>
+    </select>
+    <br><br>
+    <input id="submit" type="submit" value="Submit">
+    </form> 
+
+<div id="line" style="border:1px solid rgb(225, 153, 153); margin-top:20px;">
+       <script>
+    $(document).ready(function(){
+        $('#fname,#lname,#cars').focus(function(){
+            $(this).css("background-color", "yellow");
+        });
+        $('#lname,#fname,#cars').blur(function(){
+            $(this).css("background-color", "pink");
+        });
+        $('#cars').change(function(){
+            var a= $(this).val();
+            $('#line').html(a);
+        });
+    });
+    </script>
+</div>
+ 
+</body>
+</html>
