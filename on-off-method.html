@@ -10,7 +10,7 @@
     crossorigin="anonymous"></script>
 </head>
 <style>
-#box{
+#box,#box2{
     padding:10px;
     border: solid 1px black;
 }
@@ -20,14 +20,29 @@
 </style>
 <body>
     <div id="box">
-        <h2> this is on  method</h2>
+        <h2> this is on method</h2>
+        <p id="demo">This is a paragraph.</p>
+    </div>
+    <br><br>
+    <div id="box2">
+        <h2> this is on method but more modified</h2>
         <p id="demo">This is a paragraph.</p>
     </div>
     <script>
-        $(document).ready(function(){
-$("#box").on("mouseover mouseout",function(){
-    $(this).toggleClass("boxbg");
-});
+        $(document).ready(function () {
+            $("#box").on("mouseover mouseout", function () {
+                $(this).toggleClass("boxbg");
+            });
+        $("#box2").on({
+            click: function(){
+                $(this).css("background-color", "yellow");
+            },
+            mouseout: function(){
+                $(this).css("background-color", "pink");
+            },
+            
+        })
+
         });
     </script>
 </body>
