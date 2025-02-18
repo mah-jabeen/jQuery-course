@@ -16,24 +16,34 @@
             margin-top: 20px;
             border: 1px solid black;
         }
+        #wrapall{
+            background-color: yellow;
+            border: 1px solid red;
+        }
+        #wrapinner{
+            background-color: blue;
+            color: white;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
     <div id="container" class="box">
-        <h1>Empty/Remove</h1>
+        <h1>wrapall/wrapInner</h1>
+        <p>i am first paragraph</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, veniam.</p>
-        <button id="Empty">Empty</button>
-        <button id="Remove">Remove</button>
+        <button id="btn1">Wrap All</button>
+        <button id="btn2">Wrap Inner</button>
     </div>
 <script>
  // what ever the object we have targetted it works outside of it
     $(document).ready(function(){
-      $('#Empty').click(function(){
-        $('#container').empty();
+      $('#btn1').click(function(){
+        $('p').wrapAll('<div id="wrapall"> hi</div>');
       });
      
-      $('#Remove').click(function(){
-        $('#container').remove();
+      $('#btn2').click(function(){
+        $('p').wrapInner('<div id="wrapinner"> wrapinner</div>');
       });
     });
 </script>

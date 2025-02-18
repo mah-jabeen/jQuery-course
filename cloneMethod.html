@@ -9,32 +9,36 @@
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
     crossorigin="anonymous"></script>
     <style>
-        .box{
+        .box,.box2{
             width: 300px;
             height: 300px;
             background-color: rgb(179, 212, 252);
             margin-top: 20px;
             border: 1px solid black;
         }
+        .box2{
+            background-color: bisque;
+        }
     </style>
 </head>
 <body>
     <div id="container" class="box">
-        <h1>Empty/Remove</h1>
+        <h1>clone method:: duplicating</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, veniam.</p>
-        <button id="Empty">Empty</button>
-        <button id="Remove">Remove</button>
     </div>
+    <div id="container2" class="box2">
+        <h1>Second container</h1>
+    </div>
+    <button id="clone">clone</button>
+
 <script>
- // what ever the object we have targetted it works outside of it
     $(document).ready(function(){
-      $('#Empty').click(function(){
-        $('#container').empty();
+      $('#clone').click(function(){
+        $('#container h1').clone().prependTo('#container2');
+        $('#container p').clone().appendTo('#container2');
+
       });
      
-      $('#Remove').click(function(){
-        $('#container').remove();
-      });
     });
 </script>
 </body>

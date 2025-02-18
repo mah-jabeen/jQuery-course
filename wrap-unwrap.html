@@ -20,20 +20,20 @@
 </head>
 <body>
     <div id="container" class="box">
-        <h1>Empty/Remove</h1>
+        <h1>wrap/unwrap</h1>
+      <p>wrap is basically you make parent of any tag</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, veniam.</p>
-        <button id="Empty">Empty</button>
-        <button id="Remove">Remove</button>
+        <button id="wrap">wrap</button>
+        <button id="unwrap">unwrap</button>
     </div>
 <script>
- // what ever the object we have targetted it works outside of it
     $(document).ready(function(){
-      $('#Empty').click(function(){
-        $('#container').empty();
+      $('#wrap').click(function(){
+        $('#container p:first').wrap('<div class="wrapper"></div>');
       });
      
-      $('#Remove').click(function(){
-        $('#container').remove();
+      $('#unwrap').click(function(){
+        $('.wrapper').unwrap();
       });
     });
 </script>

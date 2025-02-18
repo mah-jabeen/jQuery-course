@@ -20,20 +20,22 @@
 </head>
 <body>
     <div id="container" class="box">
-        <h1>Empty/Remove</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, veniam.</p>
-        <button id="Empty">Empty</button>
-        <button id="Remove">Remove</button>
+        <h1>Replace with/Replace all</h1>
+        <p>one Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, veniam.</p>
+        <p>two Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, veniam.</p>
+        <p>three Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, veniam.</p>
+
+        <button id="with">Replace with</button>
+        <button id="all">Replace all</button>
     </div>
 <script>
- // what ever the object we have targetted it works outside of it
     $(document).ready(function(){
-      $('#Empty').click(function(){
-        $('#container').empty();
+      $('#with').click(function(){
+        $('#container p:first').replaceWith("<h2>hi i am replacing first paragraph</h2>");
       });
      
-      $('#Remove').click(function(){
-        $('#container').remove();
+      $('#all').click(function(){
+        $('#container p').replaceAll("<p>hi i am replacing all paragraphs</p>");
       });
     });
 </script>

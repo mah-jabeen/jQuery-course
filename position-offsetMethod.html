@@ -16,24 +16,32 @@
             margin-top: 20px;
             border: 1px solid black;
         }
+     
     </style>
 </head>
 <body>
     <div id="container" class="box">
-        <h1>Empty/Remove</h1>
+        <h1>position/offset</h1>
+        <p>i am first paragraph</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, veniam.</p>
-        <button id="Empty">Empty</button>
-        <button id="Remove">Remove</button>
+        <button id="btn1">position</button>
+        <button id="btn2">offset</button>
     </div>
 <script>
  // what ever the object we have targetted it works outside of it
     $(document).ready(function(){
-      $('#Empty').click(function(){
-        $('#container').empty();
+      $('#btn1').click(function(){
+        // position() method returns the current position of an element relative to the offset parent.
+        // It returns an object containing the properties top and left.
+        var position = $('#container').position();
+        console.log(position);
       });
      
-      $('#Remove').click(function(){
-        $('#container').remove();
+      $('#btn2').click(function(){
+        // offset() method returns the current position of an element relative to the document.
+        // It returns an object containing the properties top and left.
+        var offset = $('#container').offset({top:0,left:0});
+        console.log(offset);
       });
     });
 </script>
