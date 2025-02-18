@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empty/Remove</title>
+    <title>Document</title>
     <script
     src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -14,35 +14,32 @@
             height: 300px;
             background-color: rgb(179, 212, 252);
             margin-top: 20px;
-            border: 1px solid black;
         }
-        #wrapall{
-            background-color: yellow;
-            border: 1px solid red;
-        }
-        #wrapinner{
-            background-color: blue;
-            color: white;
-            padding: 10px;
-        }
+       
     </style>
 </head>
 <body>
+    <h1>Hide Show / Toggle Method</h1>
     <div id="container" class="box">
-        <h1>wrapall/wrapInner</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, veniam.</p>
-        <button id="btn1">Wrap All</button>
-        <button id="btn2">Wrap Inner</button>
     </div>
+<button id="btn1">hide</button>
+<button id="btn2">show</button>
+<button id="btn3">Toggle</button>
 <script>
     $(document).ready(function(){
-      $('#btn1').click(function(){
-        $('p').wrapAll('<div id="wrapall"> hi</div>');
-      });
-     
-      $('#btn2').click(function(){
-        $('p').wrapInner('<div id="wrapinner"> wrapinner</div>');
-      });
+       $("#btn1").click(function(){
+        $("#container").hide("slow");
+       });
+        
+       $("#btn2").click(function(){
+        $("#container").show("fast");
+       });
+        
+       $("#btn3").click(function(){
+        $("#container").toggle("fast");
+       });
+        
     });
 </script>
 </body>

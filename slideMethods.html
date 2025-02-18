@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empty/Remove</title>
+    <title>Document</title>
     <script
     src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -12,36 +12,33 @@
         .box{
             width: 300px;
             height: 300px;
-            background-color: rgb(179, 212, 252);
+            background-color: rgb(242, 189, 198);
             margin-top: 20px;
-            border: 1px solid black;
         }
-        #wrapall{
-            background-color: yellow;
-            border: 1px solid red;
-        }
-        #wrapinner{
-            background-color: blue;
-            color: white;
-            padding: 10px;
-        }
+       
     </style>
 </head>
 <body>
+    <h1>slide Methods</h1>
     <div id="container" class="box">
-        <h1>wrapall/wrapInner</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, veniam.</p>
-        <button id="btn1">Wrap All</button>
-        <button id="btn2">Wrap Inner</button>
-    </div>
+        </div><br><br>
+<button id="btn2">slide down</button>
+<button id="btn3">slide Toggle</button>
+<button id="btn4">slide up</button>
+
 <script>
+    <!-- three parameters slow/fast which is speed,opacity,call back function -->
+
     $(document).ready(function(){
-      $('#btn1').click(function(){
-        $('p').wrapAll('<div id="wrapall"> hi</div>');
+      $("#btn2").click(function(){
+        $("#container").slideDown(2000);
       });
-     
-      $('#btn2').click(function(){
-        $('p').wrapInner('<div id="wrapinner"> wrapinner</div>');
+      $("#btn3").click(function(){
+        $("#container").slideToggle();
+      });
+      $("#btn4").click(function(){
+        $("#container").slideUp();
       });
     });
 </script>
