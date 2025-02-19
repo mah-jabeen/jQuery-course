@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+     <style>   .box{
+        width: 300px;
+        height: 300px;
+        background-color: rgb(242, 213, 189);
+        margin-top: 20px;
+        padding: 10px;
+    }</style>
+</head>
+
+<body>
+    <h1>pageX & pageY Methods</h1>
+   <div class="box"></div>
+    
+        </div><br>
+
+        <script>
+            $(document).ready(function () {
+               $(document).mousemove(function(event){
+                 var x = event.pageX;
+                 var y = event.pageY;
+                 console.log('X: '+x+', Y: '+y);
+                 $('.box').text('X: '+x+', Y: '+y);
+                 $('.box').css({
+                     'left': x - 150,
+                     'top': y - 150
+                 });
+                 
+                 $('.box').fadeToggle(1000);
+                 setTimeout(function(){
+                     $('.box').fadeToggle(1000);
+                 }, 3000);
+                 
+           
+                
+                 
+                 // add click event to box
+               });
+            });
+        </script>
+</body>
+
+</html>
