@@ -21,11 +21,12 @@
     </style>
 </head>
 <body>
-    <h1>Animate Methods</h1>
+    <h1>stop Methods</h1>
     <div id="container" class="box">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, veniam.</p>
         </div><br><br>
 <button id="btn2">animate</button>
+<button id="btn3">stop</button>
 
 
 <script>
@@ -34,6 +35,10 @@
       $("#btn2").click(function(){
         $("#container").animate({left:"200px"},"slow",function(){
           alert("hi i am animated");
+        });
+        
+        $("#btn3").click(function(){
+          $("#container").stop({left:"100px"});
         });
       });
     
